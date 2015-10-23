@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->integer('user_role_id')->unsigned();
             $table->foreign('user_role_id')->references('role_id')->on('user_roles')->onDelete('cascade');
             $table->integer('company_id')->unsigned()->nullable();
+            $table->boolean('is_active')->default(1);
             $table->rememberToken();
             $table->timestamps();
             $table->engine = 'InnoDB';
