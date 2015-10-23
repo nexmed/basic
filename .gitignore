@@ -17,4 +17,5 @@ Homestead.json
 /bootstrap/cache
 /public/.htaccess
 /artisan
+/storage/logs
 /.idea/

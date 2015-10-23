@@ -1,3 +1,5 @@
+/views
+/sessions
 /cache
 config.php
 routes.php
