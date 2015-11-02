@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Route;
 
 class Authenticate
 {
@@ -40,6 +41,11 @@ class Authenticate
             } else {
                 return redirect()->guest('auth/login');
             }
+        }
+        elseif($this->auth->user()->is_active != 0 && $request->fullUrl() != route('logout') )
+        {
+            //dd($request->fullUrl());
+            return redirect()->route('inactive');
         }
 
         return $next($request);

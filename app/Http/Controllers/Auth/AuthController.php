@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\View;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -71,6 +72,11 @@ class AuthController extends Controller
             ->withErrors([
                 $this->loginUsername() => $this->getFailedLoginMessage(),
             ]);
+    }
+
+    public function inactive(Request $request)
+    {
+        return view('errors.inactive');
     }
 
     /**

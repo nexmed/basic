@@ -17,13 +17,20 @@ Route::group(['middleware' => 'auth'], function(){
 //    {
 //        print_r($user->name);
 //    }
-        dd(\Auth::user());
+        //dd(\Auth::user());
         return view('welcome');
     });
 
-    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+    Route::get('auth/logout', array(
+        'uses' => 'Auth\AuthController@getLogout',
+        'as' => 'logout'
+    ));
+
 });
 
-
+Route::any('/inactive', [
+    'as' => 'inactive',
+    'uses' => 'CoreController@inactive'
+]);
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

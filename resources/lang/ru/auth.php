@@ -21,4 +21,6 @@ return [
     'login'     => 'Войти',
     'page_title' => 'Вход в личный кабинет',
     'error_title' => '<strong>Ой!</strong> возникли проблемы со входом:',
+    'non_active_title' => 'Ошибка учетной записи',
+    'non_active' => 'Ваша учетная запись неактивна. Для справки или консультации пишите на <a href="mailto:support@nexmed.ru">support@nexmed.ru</a>.'
 ];
